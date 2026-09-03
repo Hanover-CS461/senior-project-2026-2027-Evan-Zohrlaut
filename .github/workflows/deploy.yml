@@ -41,7 +41,7 @@ jobs:
         with:
           path: './docs/proposal/_site'
 
-   deploy-pages:
+  deploy-pages:
     runs-on: ubuntu-latest
     needs: build-docs
     permissions:
