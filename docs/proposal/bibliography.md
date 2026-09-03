@@ -1,3 +1,4 @@
+---
 # Annotated Bibliography — EZ-Games
 
 **Project:** EZ-Games — a web game hub (a place for quick, fun games in one site), starting with a customizable Tic Tac Toe featuring a three-level bot, in-game color schemes, and browser-stored win stats.

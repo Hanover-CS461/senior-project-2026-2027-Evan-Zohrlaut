@@ -1,3 +1,4 @@
+---
 # IT Ticket System — Senior Project Proposal
 
 > Alternate idea

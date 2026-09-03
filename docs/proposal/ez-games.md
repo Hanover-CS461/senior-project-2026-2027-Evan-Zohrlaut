@@ -1,3 +1,4 @@
+---
 # EZ-Games — Senior Project Proposal
 
 > Working name for a web game hub: a place for quick, fun games in one site, starting with a customizable Tic Tac Toe with a three-level bot opponent.
