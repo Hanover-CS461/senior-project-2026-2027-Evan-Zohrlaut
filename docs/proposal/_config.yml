@@ -1,2 +1,16 @@
 plugins:
   - jekyll-relative-links
+  - jekyll-remote-theme
+
+lsi: false
+incremental: false
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+remote_theme: pages-themes/cayman
+
+title: EZ-Games
+description: Senior Project
