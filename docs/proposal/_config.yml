@@ -3,12 +3,7 @@ plugins:
   - jekyll-remote-theme
 
 lsi: false
-incremental: false
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+baseurl: "/senior-project-2026-2027-Evan-Zohrlaut"
 
 remote_theme: pages-themes/cayman
 
