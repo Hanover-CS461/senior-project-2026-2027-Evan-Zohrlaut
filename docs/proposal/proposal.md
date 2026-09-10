@@ -1,7 +1,3 @@
----
-title: EZ-Games — Senior Project Proposal
-layout: default
----
 # EZ-Games: A Growing Collection of Casual Games
 
 **Senior Project 2026–2027 · Proposal Draft** ·
@@ -24,7 +20,7 @@ EZ-Games is a web game hub: one site that holds a growing collection of quick, f
 | People who like customizing games | Personalizing the look makes it "theirs" |
 | Anyone without a second player | Bot opponents make every game playable solo |
 
-**Positioning.** Unlike the big web game portals — [Coolmath Games](https://www.coolmathgames.com/) [1], [Poki](https://poki.com/) [2], and [Miniclip](https://www.miniclip.com/) [3] — EZ-Games has no ads, no accounts, and one consistent visual style across every game. Unlike single-game options such as [Google's built-in Tic Tac Toe](https://www.google.com/fbx?fbx=tic_tac_toe) [4] and popular mobile apps like Optime Software's Tic Tac Toe [5], it is a hub that can grow.
+**Positioning.** Unlike the big web game portals — [Coolmath Games](https://www.coolmathgames.com/) [1](#ref-1), [Poki](https://poki.com/) [2](#ref-2), and [Miniclip](https://www.miniclip.com/) [3](#ref-3) — EZ-Games has no ads, no accounts, and one consistent visual style across every game. Unlike single-game options such as [Google's built-in Tic Tac Toe](https://www.google.com/fbx?fbx=tic_tac_toe) [4](#ref-4) and popular mobile apps like Optime Software's Tic Tac Toe [5](#ref-5), it is a hub that can grow.
 
 ## 2. Main Features
 
@@ -36,14 +32,14 @@ EZ-Games is a web game hub: one site that holds a growing collection of quick, f
   * Bot with three honest difficulty levels:
     * **Beginner** — forgiving, makes mostly random moves
     * **Pro** — blocks wins and plays a solid game
-    * **Expert** — near-perfect play via the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax) [6]; very rarely beatable
+    * **Expert** — near-perfect play via the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax) [6](#ref-6); very rarely beatable
   * Multiple color schemes for the board and background, selectable in-game
   * Win streak counter and total wins tracked per difficulty, saved locally in the browser
-* [React](https://react.dev/) component structure [7] that makes adding more games straightforward
+* [React](https://react.dev/) component structure [7](#ref-7) that makes adding more games straightforward
 
 **Stretch (if time allows):** a second game added to the site.
 
-**Scope decisions.** A web application written in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [8], built with [React](https://react.dev/) [7] and the [Vite](https://vitejs.dev/) build tool [9], using the browser's [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) [10] for stats and [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) [11] for theming. Preset color schemes only (no custom background images); browser-stored stats only (no accounts, no server).
+**Scope decisions.** A web application written in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [8](#ref-8), built with [React](https://react.dev/) [7](#ref-7) and the [Vite](https://vitejs.dev/) build tool [9](#ref-9), using the browser's [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) [10](#ref-10) for stats and [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) [11](#ref-11) for theming. Preset color schemes only (no custom background images); browser-stored stats only (no accounts, no server).
 
 ## 3. Visual Overview
 
@@ -64,9 +60,9 @@ Each box is one logical piece with a clear role: the **launcher** owns navigatio
 
 The market splits into two groups, and nobody sits in the middle.
 
-**The big portals.** [Coolmath Games](https://www.coolmathgames.com/) [1], [Poki](https://poki.com/) [2], and [Miniclip](https://www.miniclip.com/) [3] are large web game hubs with hundreds of games, and their popularity proves that people really do want a place to pick something and play. But they are ad-supported, nudge you into accounts to save progress, and — since every game comes from a different developer — nothing on the page looks like it belongs together.
+**The big portals.** [Coolmath Games](https://www.coolmathgames.com/) [1](#ref-1), [Poki](https://poki.com/) [2](#ref-2), and [Miniclip](https://www.miniclip.com/) [3](#ref-3) are large web game hubs with hundreds of games, and their popularity proves that people really do want a place to pick something and play. But they are ad-supported, nudge you into accounts to save progress, and — since every game comes from a different developer — nothing on the page looks like it belongs together.
 
-**The single-game options.** Google's Tic Tac Toe [4] is free and instant in the browser, with three difficulty levels and a two-player local mode, but it is a single throwaway game with no customization and no persistent stats. Optime Software's Tic Tac Toe [5] is one of the best-selling mobile versions (10M+ downloads) and confirms that multi-level AI plus score tracking is what players expect — but it is Android-only, ad-supported, and there is only one game.
+**The single-game options.** Google's Tic Tac Toe [4](#ref-4) is free and instant in the browser, with three difficulty levels and a two-player local mode, but it is a single throwaway game with no customization and no persistent stats. Optime Software's Tic Tac Toe [5](#ref-5) is one of the best-selling mobile versions (10M+ downloads) and confirms that multi-level AI plus score tracking is what players expect — but it is Android-only, ad-supported, and there is only one game.
 
 **How they compare.**
 
@@ -96,12 +92,12 @@ The market splits into two groups, and nobody sits in the middle.
 
 The stack is deliberately small: JavaScript, React, and Vite, plus two browser features and one algorithm. Nothing beyond this is needed to meet every requirement.
 
-* **Language — JavaScript [8].** The only language that runs natively in the browser, so it keeps the "no install, any device" promise without any backend.
-* **Framework — React [7].** The component model _is_ the hub: each game is a component that plugs into the launcher, so adding a game means adding a component rather than redesigning the app.
-* **Build tool — Vite [9].** Provides instant hot-reload during development and a one-command build that produces static files ready to host.
-* **Theming — CSS custom properties [11].** Each color scheme is a set of variable values; switching themes changes one root attribute and recolors the whole app.
-* **Stats — Web Storage API (localStorage) [10].** Saves win data as JSON on the device — the no-accounts persistence story.
-* **Expert bot — minimax algorithm [6].** A small recursive search over game states; the same function is deliberately weakened to create the Beginner and Pro tiers.
+* **Language — JavaScript [8](#ref-8).** The only language that runs natively in the browser, so it keeps the "no install, any device" promise without any backend.
+* **Framework — React [7](#ref-7).** The component model _is_ the hub: each game is a component that plugs into the launcher, so adding a game means adding a component rather than redesigning the app.
+* **Build tool — Vite [9](#ref-9).** Provides instant hot-reload during development and a one-command build that produces static files ready to host.
+* **Theming — CSS custom properties [11](#ref-11).** Each color scheme is a set of variable values; switching themes changes one root attribute and recolors the whole app.
+* **Stats — Web Storage API (localStorage) [10](#ref-10).** Saves win data as JSON on the device — the no-accounts persistence story.
+* **Expert bot — minimax algorithm [6](#ref-6).** A small recursive search over game states; the same function is deliberately weakened to create the Beginner and Pro tiers.
 
 **Libraries decision.** No third-party libraries beyond React. The app's state is small enough for React's built-in state, the minimax bot is simple enough to hand-roll for a 3×3 board, and theming uses native CSS variables. Fewer dependencies means less to learn and less that can break on a fixed timeline — nothing in this project needs a library to avoid hand-rolling.
 
@@ -111,9 +107,9 @@ Each major choice had an alternative that was weighed and rejected.
 
 | Choice | Alternative | Why this one wins |
 | --- | --- | --- |
-| JavaScript [8] | [TypeScript](https://www.typescriptlang.org/) [12] | TypeScript adds types and catches bugs, but it is a second syntax layer to learn; plain JavaScript is enough for this scope |
-| React [7] | [Vue.js](https://vuejs.org/) [13] | Both fit a component model, but React is the ecosystem I am more likely to build on and has the larger community and documentation |
-| Vite [9] | [webpack](https://webpack.js.org/) / Create React App [14] | Vite is simpler to configure and noticeably faster to develop with than the older webpack-based tooling |
+| JavaScript [8](#ref-8) | [TypeScript](https://www.typescriptlang.org/) [12](#ref-12) | TypeScript adds types and catches bugs, but it is a second syntax layer to learn; plain JavaScript is enough for this scope |
+| React [7](#ref-7) | [Vue.js](https://vuejs.org/) [13](#ref-13) | Both fit a component model, but React is the ecosystem I am more likely to build on and has the larger community and documentation |
+| Vite [9](#ref-9) | [webpack](https://webpack.js.org/) / Create React App [14](#ref-14) | Vite is simpler to configure and noticeably faster to develop with than the older webpack-based tooling |
 
 ## 8. What I Need to Learn
 
@@ -128,30 +124,17 @@ Most of this is front-end work with abundant documentation, and the no-backend, 
 
 ## References
 
-[1] Coolmath Games, "Coolmath Games." Accessed: Sep. 7, 2026. [Online]. Available: https://www.coolmathgames.com/
-
-[2] Poki, "Poki." Accessed: Sep. 7, 2026. [Online]. Available: https://poki.com/
-
-[3] Miniclip, "Miniclip." Accessed: Sep. 7, 2026. [Online]. Available: https://www.miniclip.com/
-
-[4] Google, "Tic Tac Toe." Accessed: Sep. 7, 2026. [Online]. Available: https://www.google.com/fbx?fbx=tic_tac_toe
-
-[5] Optime Software, "Tic Tac Toe: Classic 3x3," Google Play. Accessed: Sep. 7, 2026. [Online]. Available: https://play.google.com/store/apps/details?id=com.optimesoftware.tictactoe.free
-
-[6] "Minimax," Wikipedia, The Free Encyclopedia. Accessed: Sep. 7, 2026. [Online]. Available: https://en.wikipedia.org/wiki/Minimax
-
-[7] Meta Platforms, Inc., "React." Accessed: Sep. 7, 2026. [Online]. Available: https://react.dev/
-
-[8] MDN Web Docs, "JavaScript." Accessed: Sep. 7, 2026. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-
-[9] Vite, "Vite." Accessed: Sep. 7, 2026. [Online]. Available: https://vitejs.dev/
-
-[10] MDN Web Docs, "Web Storage API." Accessed: Sep. 7, 2026. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
-
-[11] MDN Web Docs, "Using CSS custom properties." Accessed: Sep. 7, 2026. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-
-[12] Microsoft, "TypeScript." Accessed: Sep. 7, 2026. [Online]. Available: https://www.typescriptlang.org/
-
-[13] Vue.js, "Vue.js." Accessed: Sep. 7, 2026. [Online]. Available: https://vuejs.org/
-
-[14] webpack, "webpack." Accessed: Sep. 7, 2026. [Online]. Available: https://webpack.js.org/
+1. {:#ref-1} Coolmath Games, "Coolmath Games." Accessed: Sep. 7, 2026. [Online]. Available: [https://www.coolmathgames.com/](https://www.coolmathgames.com/)
+2. {:#ref-2} Poki, "Poki." Accessed: Sep. 7, 2026. [Online]. Available: [https://poki.com/](https://poki.com/)
+3. {:#ref-3} Miniclip, "Miniclip." Accessed: Sep. 7, 2026. [Online]. Available: [https://www.miniclip.com/](https://www.miniclip.com/)
+4. {:#ref-4} Google, "Tic Tac Toe." Accessed: Sep. 7, 2026. [Online]. Available: [https://www.google.com/fbx?fbx=tic_tac_toe](https://www.google.com/fbx?fbx=tic_tac_toe)
+5. {:#ref-5} Optime Software, "Tic Tac Toe: Classic 3x3," Google Play. Accessed: Sep. 7, 2026. [Online]. Available: [https://play.google.com/store/apps/details?id=com.optimesoftware.tictactoe.free](https://play.google.com/store/apps/details?id=com.optimesoftware.tictactoe.free)
+6. {:#ref-6} "Minimax," Wikipedia, The Free Encyclopedia. Accessed: Sep. 7, 2026. [Online]. Available: [https://en.wikipedia.org/wiki/Minimax](https://en.wikipedia.org/wiki/Minimax)
+7. {:#ref-7} Meta Platforms, Inc., "React." Accessed: Sep. 7, 2026. [Online]. Available: [https://react.dev/](https://react.dev/)
+8. {:#ref-8} MDN Web Docs, "JavaScript." Accessed: Sep. 7, 2026. [Online]. Available: [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+9. {:#ref-9} Vite, "Vite." Accessed: Sep. 7, 2026. [Online]. Available: [https://vitejs.dev/](https://vitejs.dev/)
+10. {:#ref-10} MDN Web Docs, "Web Storage API." Accessed: Sep. 7, 2026. [Online]. Available: [https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+11. {:#ref-11} MDN Web Docs, "Using CSS custom properties." Accessed: Sep. 7, 2026. [Online]. Available: [https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+12. {:#ref-12} Microsoft, "TypeScript." Accessed: Sep. 7, 2026. [Online]. Available: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+13. {:#ref-13} Vue.js, "Vue.js." Accessed: Sep. 7, 2026. [Online]. Available: [https://vuejs.org/](https://vuejs.org/)
+14. {:#ref-14} webpack, "webpack." Accessed: Sep. 7, 2026. [Online]. Available: [https://webpack.js.org/](https://webpack.js.org/)
