@@ -1,5 +1,6 @@
+---
 # Annotated Bibliography — EZ-Games
-
+---
 **Project:** EZ-Games — a web game hub (a place for quick, fun games in one site), starting with a customizable Tic Tac Toe featuring a three-level bot, in-game color schemes, and browser-stored win stats.
 
 **Scope note:** EZ-Games is built with React (using the Vite build tool) on top of HTML, CSS, and JavaScript. React is what gives the hub its structure — each game is a component that slots into a shared launcher. The browser's Web Storage API and CSS Custom Properties handle saving stats and switching themes, and the minimax algorithm powers the Expert bot. Since the app is all client-side — no accounts, no online play — the only protocol in the picture is HTTP.

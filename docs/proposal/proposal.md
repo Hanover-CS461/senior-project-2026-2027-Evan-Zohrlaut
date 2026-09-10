@@ -1,8 +1,9 @@
+---
 # EZ-Games: A Growing Collection of Casual Games
 
 **Senior Project 2026–2027 · Proposal Draft** ·
 
-* * *
+---
 
 ## 1. Project Description
 
