@@ -1,9 +1,13 @@
 ---
+# EZ-Games — Senior Project Proposal
+title: EZ-Games — Senior Project Proposal
+layout: default
+---
+> Working name for a web game hub: a place for quick, fun games in one site, starting with a customizable Tic Tac Toe with a three-level bot opponent.
 # EZ-Games: A Growing Collection of Casual Games
 
-**Senior Project 2026–2027 · Proposal Draft** ·
-
 ---
+**Senior Project 2026–2027 · Proposal Draft** ·
 
 ## 1. Project Description
 
