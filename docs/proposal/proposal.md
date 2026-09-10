@@ -1,12 +1,14 @@
 ---
+
 # EZ-Games — Senior Project Proposal
+
 title: EZ-Games — Senior Project Proposal
 layout: default
----
-> Working name for a web game hub: a place for quick, fun games in one site, starting with a customizable Tic Tac Toe with a three-level bot opponent.
-# EZ-Games: A Growing Collection of Casual Games
 
 ---
+
+---
+
 **Senior Project 2026–2027 · Proposal Draft** ·
 
 ## 1. Project Description
@@ -19,11 +21,11 @@ EZ-Games is a web game hub: one site that holds a growing collection of quick, f
 
 **Who it is for.**
 
-| Who | Why they'd use it |
-| --- | --- |
-| Casual players / students | A quick game to fill a few minutes — one site for all |
-| People who like customizing games | Personalizing the look makes it "theirs" |
-| Anyone without a second player | Bot opponents make every game playable solo |
+| Who                               | Why they'd use it                                     |
+| --------------------------------- | ----------------------------------------------------- |
+| Casual players / students         | A quick game to fill a few minutes — one site for all |
+| People who like customizing games | Personalizing the look makes it "theirs"              |
+| Anyone without a second player    | Bot opponents make every game playable solo           |
 
 **Positioning.** Unlike the big web game portals — [Coolmath Games](https://www.coolmathgames.com/) [1](#ref-1), [Poki](https://poki.com/) [2](#ref-2), and [Miniclip](https://www.miniclip.com/) [3](#ref-3) — EZ-Games has no ads, no accounts, and one consistent visual style across every game. Unlike single-game options such as [Google's built-in Tic Tac Toe](https://www.google.com/fbx?fbx=tic_tac_toe) [4](#ref-4) and popular mobile apps like Optime Software's Tic Tac Toe [5](#ref-5), it is a hub that can grow.
 
@@ -49,7 +51,6 @@ EZ-Games is a web game hub: one site that holds a growing collection of quick, f
 ## 3. Visual Overview
 
 EZ-Games is entirely client-side, so its "parts" are logical pieces inside the browser rather than separate servers. The launcher is a hub of game components; each game separates its UI from its logic; and two browser features (CSS variables and localStorage) provide theming and persistence.
-
     flowchart TD
         Hub[Launcher / Hub] --> TTT[Tic Tac Toe Component]
         Hub --> More[Future Game Components]
@@ -71,17 +72,17 @@ The market splits into two groups, and nobody sits in the middle.
 
 **How they compare.**
 
-|     | Coolmath | Poki | Miniclip | Google TTT | Optime TTT | **EZ-Games** |
-| --- | --- | --- | --- | --- | --- | --- |
-| Platform | Web | Web | Web + mobile | In-browser | Android app | **Web** |
-| Hub of many games | Yes | Yes | Yes | No  | No  | **Yes (grows)** |
-| Ads | Yes | Yes | Yes | No  | Yes | **No** |
-| Accounts | Progress-based | Membership | Accounts | No  | No  | **No** |
-| Customization / themes | No  | No  | No  | No  | No  | **Yes** |
-| Bot difficulty | Varies | Varies | Varies | 3 levels | 3 levels | **3 honest levels** |
-| Persistent stats | Account-based | Account | Account | No  | Score | **Local, per level** |
-| Consistent visual style | No  | No  | Mixed | N/A | N/A | **Yes** |
-| No-install play | Yes | Yes | Yes | Yes | No  | **Yes** |
+|                         | Coolmath       | Poki       | Miniclip     | Google TTT | Optime TTT  | **EZ-Games**         |
+| ----------------------- | -------------- | ---------- | ------------ | ---------- | ----------- | -------------------- |
+| Platform                | Web            | Web        | Web + mobile | In-browser | Android app | **Web**              |
+| Hub of many games       | Yes            | Yes        | Yes          | No         | No          | **Yes (grows)**      |
+| Ads                     | Yes            | Yes        | Yes          | No         | Yes         | **No**               |
+| Accounts                | Progress-based | Membership | Accounts     | No         | No          | **No**               |
+| Customization / themes  | No             | No         | No           | No         | No          | **Yes**              |
+| Bot difficulty          | Varies         | Varies     | Varies       | 3 levels   | 3 levels    | **3 honest levels**  |
+| Persistent stats        | Account-based  | Account    | Account      | No         | Score       | **Local, per level** |
+| Consistent visual style | No             | No         | Mixed        | N/A        | N/A         | **Yes**              |
+| No-install play         | Yes            | Yes        | Yes          | Yes        | No          | **Yes**              |
 
 **The gap.** The portals have variety but are cluttered, ad-supported, and account-gated; the single games are clean but run out of steam once played a few times. What's missing is a hub that stays simple: several games, one consistent look, no ads or accounts, and stats that just save in the browser. That is the gap EZ-Games is aiming at.
 
@@ -110,11 +111,11 @@ The stack is deliberately small: JavaScript, React, and Vite, plus two browser f
 
 Each major choice had an alternative that was weighed and rejected.
 
-| Choice | Alternative | Why this one wins |
-| --- | --- | --- |
-| JavaScript [8](#ref-8) | [TypeScript](https://www.typescriptlang.org/) [12](#ref-12) | TypeScript adds types and catches bugs, but it is a second syntax layer to learn; plain JavaScript is enough for this scope |
-| React [7](#ref-7) | [Vue.js](https://vuejs.org/) [13](#ref-13) | Both fit a component model, but React is the ecosystem I am more likely to build on and has the larger community and documentation |
-| Vite [9](#ref-9) | [webpack](https://webpack.js.org/) / Create React App [14](#ref-14) | Vite is simpler to configure and noticeably faster to develop with than the older webpack-based tooling |
+| Choice                 | Alternative                                                         | Why this one wins                                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| JavaScript [8](#ref-8) | [TypeScript](https://www.typescriptlang.org/) [12](#ref-12)         | TypeScript adds types and catches bugs, but it is a second syntax layer to learn; plain JavaScript is enough for this scope        |
+| React [7](#ref-7)      | [Vue.js](https://vuejs.org/) [13](#ref-13)                          | Both fit a component model, but React is the ecosystem I am more likely to build on and has the larger community and documentation |
+| Vite [9](#ref-9)       | [webpack](https://webpack.js.org/) / Create React App [14](#ref-14) | Vite is simpler to configure and noticeably faster to develop with than the older webpack-based tooling                            |
 
 ## 8. What I Need to Learn
 
