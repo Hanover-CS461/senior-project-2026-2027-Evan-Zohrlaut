@@ -4,6 +4,7 @@
 
 title: EZ-Games — Senior Project Proposal
 layout: default
+mermaid: true
 
 ---
 
@@ -51,14 +52,17 @@ EZ-Games is a web game hub: one site that holds a growing collection of quick, f
 ## 3. Visual Overview
 
 EZ-Games is entirely client-side, so its "parts" are logical pieces inside the browser rather than separate servers. The launcher is a hub of game components; each game separates its UI from its logic; and two browser features (CSS variables and localStorage) provide theming and persistence.
-    flowchart TD
-        Hub[Launcher / Hub] --> TTT[Tic Tac Toe Component]
-        Hub --> More[Future Game Components]
-        TTT --> Logic[Game Logic + Minimax Bot]
-        TTT --> Theme[Theming - CSS Custom Properties]
-        TTT --> Stats[Win Stats - localStorage]
-        Logic --> Board[Board UI]
-        Theme --> Board
+
+```mermaid
+flowchart TD
+    Hub[Launcher / Hub] --> TTT[Tic Tac Toe Component]
+    Hub --> More[Future Game Components]
+    TTT --> Logic[Game Logic + Minimax Bot]
+    TTT --> Theme[Theming - CSS Custom Properties]
+    TTT --> Stats[Win Stats - localStorage]
+    Logic --> Board[Board UI]
+    Theme --> Board
+```
 
 Each box is one logical piece with a clear role: the **launcher** owns navigation, each **game component** owns its rules and UI, the **minimax bot** is pure game logic reused by the difficulty tiers, **CSS custom properties** drive theme switching, and **localStorage** persists stats with no server or account.
 
