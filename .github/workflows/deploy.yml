@@ -36,6 +36,23 @@ jobs:
         working-directory: docs/proposal
         run: bundle exec jekyll build
 
+      - name: Set up Node.js (for Marp CLI)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Marp slides
+        working-directory: docs/proposal
+        run: npx --yes @marp-team/marp-cli@latest -I slides -o _site/slides
+
+      - name: Copy slide assets
+        working-directory: docs/proposal
+        run: |
+          if [ -d slides/assets ]; then
+            mkdir -p _site/slides
+            cp -r slides/assets _site/slides/
+          fi
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

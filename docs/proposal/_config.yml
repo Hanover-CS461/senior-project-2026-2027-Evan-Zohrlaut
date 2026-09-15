@@ -5,6 +5,11 @@ plugins:
 lsi: false
 baseurl: "/senior-project-2026-2027-Evan-Zohrlaut"
 
+# Marp slides are built separately by the deploy workflow (marp-cli),
+# not by Jekyll — exclude them so Jekyll leaves them alone.
+exclude:
+  - slides
+
 remote_theme: pages-themes/cayman
 
 title: EZ-Games
