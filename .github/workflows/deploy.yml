@@ -43,7 +43,7 @@ jobs:
 
       - name: Build Marp slides
         working-directory: docs/proposal
-        run: npx --yes @marp-team/marp-cli@latest -I slides -o _site/slides
+        run: npx --yes @marp-team/marp-cli@latest -I slides --theme slides/dracula.css -o _site/slides
 
       - name: Copy slide assets
         working-directory: docs/proposal

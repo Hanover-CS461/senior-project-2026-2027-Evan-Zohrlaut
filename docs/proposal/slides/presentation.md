@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: default
+theme: dracula
 paginate: true
 size: 16:9
 ---
