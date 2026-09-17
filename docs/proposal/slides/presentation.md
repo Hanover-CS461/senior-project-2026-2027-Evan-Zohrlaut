@@ -17,8 +17,8 @@ size: 16:9
 
 ## A place for quick, fun games — all in one site
 
-**Evan Zohrlaut**
 **Senior Project 2026–2027**
+**Evan Zohrlaut**
 
 ---
 
@@ -66,9 +66,9 @@ A web game center:
 
 ---
 
-## Main features: the center
+## Main features: The Launcher
 
-- Launcher / center — pick a game in one place
+- Launcher / Home Page — pick a game in one place
 - One consistent look across every game
 - Built so more games can plug in later
 - First game: **Tic Tac Toe**
@@ -149,6 +149,6 @@ No third-party libraries beyond React — small state, hand-rolled minimax, nati
 
 ---
 
-## Thank you
+## Questions?
 
-Questions?
+Thank you
