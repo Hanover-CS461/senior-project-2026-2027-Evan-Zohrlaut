@@ -17,7 +17,8 @@ size: 16:9
 
 ## A place for quick, fun games — all in one site
 
-**Senior Project 2026–2027 · Evan Zohrlaut**
+**Evan Zohrlaut**
+**Senior Project 2026–2027**
 
 ---
 
@@ -37,9 +38,9 @@ size: 16:9
 
 ## What is EZ-Games?
 
-> "A place for quick, fun games — all in one site."
+"A place for quick, fun games — all in one site."
 
-A web game hub:
+A web game center:
 
 - One site, a growing collection of quick games
 - One consistent launcher and visual style
@@ -65,9 +66,9 @@ A web game hub:
 
 ---
 
-## Main features: the hub
+## Main features: the center
 
-- Launcher / hub — pick a game in one place
+- Launcher / center — pick a game in one place
 - One consistent look across every game
 - Built so more games can plug in later
 - First game: **Tic Tac Toe**
@@ -90,7 +91,7 @@ The market splits into two groups — nobody sits in the middle.
 - **Big portals** (Coolmath, Poki, Miniclip): hundreds of games, but ad-supported, account-gated, and every game looks different
 - **Single-game options** (Google TTT, Optime TTT): clean and instant, but just one game, no customization, no persistent stats
 
-**The gap:** a clean hub that stays simple — no ads, no accounts, stats that just save.
+**The gap:** a clean site that stays simple — no ads, no accounts, stats that just save.
 
 ---
 
@@ -141,7 +142,7 @@ No third-party libraries beyond React — small state, hand-rolled minimax, nati
 
 ## Summary
 
-- One hub, a growing collection of games
+- One Center, a growing collection of games
 - Honest difficulty, from a real minimax bot
 - No ads, no accounts, nothing to install
 - Stats saved locally in the browser
