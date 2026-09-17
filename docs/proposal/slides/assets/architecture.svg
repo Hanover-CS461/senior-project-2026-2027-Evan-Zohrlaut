@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="540" viewBox="0 0 940 540" font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6272a4"/>
+    </marker>
+  </defs>
+
+  <g stroke="#6272a4" stroke-width="2" fill="none">
+    <path d="M 470 70 V 110 H 260 V 128" marker-end="url(#arrow)"/>
+    <path d="M 470 70 V 110 H 700 V 128" marker-end="url(#arrow)"/>
+    <path d="M 260 176 V 225 H 120 V 276" marker-end="url(#arrow)"/>
+    <path d="M 260 176 V 225 H 430 V 276" marker-end="url(#arrow)"/>
+    <path d="M 260 176 V 225 H 760 V 276" marker-end="url(#arrow)"/>
+    <path d="M 120 324 V 370 H 430"/>
+    <path d="M 430 324 V 370"/>
+    <path d="M 430 370 V 424" marker-end="url(#arrow)"/>
+  </g>
+
+  <circle cx="430" cy="370" r="3.5" fill="#6272a4"/>
+
+  <g stroke-width="2">
+    <rect x="370" y="26"  width="200" height="44" rx="10" stroke="#ff79c6" fill="#ff79c6" fill-opacity="0.12"/>
+    <text x="470" y="48"  fill="#f8f8f2" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="middle">Launcher / Hub</text>
+
+    <rect x="145" y="128" width="230" height="48" rx="10" stroke="#8be9fd" fill="#8be9fd" fill-opacity="0.12"/>
+    <text x="260" y="152" fill="#f8f8f2" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">
+      <tspan x="260" dy="-8">Tic Tac Toe</tspan>
+      <tspan x="260" dy="16">Component</tspan>
+    </text>
+
+    <rect x="585" y="128" width="230" height="48" rx="10" stroke="#8be9fd" fill="#8be9fd" fill-opacity="0.12"/>
+    <text x="700" y="152" fill="#f8f8f2" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">
+      <tspan x="700" dy="-8">Future Game</tspan>
+      <tspan x="700" dy="16">Components</tspan>
+    </text>
+
+    <rect x="5"   y="276" width="230" height="48" rx="10" stroke="#50fa7b" fill="#50fa7b" fill-opacity="0.12"/>
+    <text x="120" y="300" fill="#f8f8f2" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">
+      <tspan x="120" dy="-8">Game Logic +</tspan>
+      <tspan x="120" dy="16">Minimax Bot</tspan>
+    </text>
+
+    <rect x="305" y="276" width="250" height="48" rx="10" stroke="#f1fa8c" fill="#f1fa8c" fill-opacity="0.12"/>
+    <text x="430" y="300" fill="#f8f8f2" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">
+      <tspan x="430" dy="-8">Theming</tspan>
+      <tspan x="430" dy="16">CSS Custom Properties</tspan>
+    </text>
+
+    <rect x="645" y="276" width="230" height="48" rx="10" stroke="#bd93f9" fill="#bd93f9" fill-opacity="0.12"/>
+    <text x="760" y="300" fill="#f8f8f2" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">
+      <tspan x="760" dy="-8">Win Stats</tspan>
+      <tspan x="760" dy="16">localStorage</tspan>
+    </text>
+
+    <rect x="320" y="424" width="220" height="48" rx="10" stroke="#ffb86c" fill="#ffb86c" fill-opacity="0.12"/>
+    <text x="430" y="448" fill="#f8f8f2" font-size="15" font-weight="600" text-anchor="middle" dominant-baseline="middle">Board UI</text>
+  </g>
+</svg>
