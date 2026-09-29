@@ -5,9 +5,9 @@ layout: default
 
 # 5. Styling and theming
 
-[Home](index.md) · [Previous: Game slots](04-game-slots.md) · [Next: Summary](06-summary.md)
+[Home](index.md) · [Previous: Cards and lists](04-game-slots.md) · [Next: Summary](06-summary.md)
 
-Your launcher works, but right now the logo is invisible and the slots are unstyled. In this section you'll give the whole page **one consistent look** using **CSS custom properties** — the mechanism EZ-Games uses for its color schemes.
+Your page works, but right now the logo is invisible and the cards are unstyled. In this section you'll give the whole page **one consistent look** using **CSS custom properties** — the mechanism EZ-Games uses for its color schemes, and the same trick any themed site uses.
 
 ## What are CSS custom properties?
 
@@ -96,7 +96,7 @@ function Header({ title, tagline }) {
 
 The naming convention `header__logo`, `header__title`, `header__tagline` is **BEM** (Block, Element, Modifier): the block is `header`, and each piece inside is an element of that block. It keeps styles predictable and collision-free as the project grows.
 
-## Step 3 — Style the game slots
+## Step 3 — Style the cards
 
 Create `src/components/GameSlot.css`:
 
@@ -149,18 +149,18 @@ function GameSlot({ game }) {
 }
 ```
 
-The slots use dashed borders (`border: 2px dashed ...`) and the "Coming soon" badge — clear visual signals that these are placeholders waiting for real games. The card background, text color, and badge color all come from CSS variables, so every part of the page belongs to the same theme.
+The cards use dashed borders (`border: 2px dashed ...`) and the "Coming soon" badge — clear visual signals that these are placeholders waiting for real content. The card background, text color, and badge color all come from CSS variables, so every part of the page belongs to the same theme.
 
 ## Step 4 — Full check
 
-Save everything. The browser should now show the finished launcher matching Figure 1 from the introduction:
+Save everything. The browser should now show the finished page matching Figure 1 from the introduction:
 
-- **Logo + "EZ-Games" title** at the top, tagline beneath it in muted text
-- A **responsive grid** of three slots
-- Slot 1 (**Tic Tac Toe**) with an accent-colored "X" icon
-- Slots 2 and 3 (**Coming Soon**) with dashed borders and "+" icons
+- **Logo + site title** at the top, tagline beneath it in muted text
+- A **responsive grid** of three cards
+- Card 1 (**Tic Tac Toe**) with an accent-colored "X" icon
+- Cards 2 and 3 (**Coming Soon**) with dashed borders and "+" icons
 
-The page now has one consistent visual identity — and the entire theme lives in seven variables at the top of `index.css`.
+The page now has one consistent visual identity — and the entire theme lives in seven variables at the top of `index.css`. Change those seven values and you've re-skinned your whole site.
 
 See the official reference: [Using CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) on MDN.
 
@@ -170,7 +170,6 @@ See the official reference: [Using CSS custom properties](https://developer.mozi
 > **Practice 5 (recommended):** Change the accent color. In `src/index.css`, edit `--color-accent: #7aa2f7;` to a different value — try `#f7768e` (pink) or `#9ece6a` (green). Save and watch the logo, badge, and card accents recolor together. This is the core of EZ-Games' color-scheme feature.
 >
 > **Practice 6 (harder):** Add a **light theme** without duplicating any styles. Define the light values inside a `.light` class:
->
 > ```css
 > .light {
 >   --color-bg: #f4f5fb;
@@ -188,7 +187,7 @@ See the official reference: [Using CSS custom properties](https://developer.mozi
 At this point you should have:
 
 - ✅ A color scheme defined once as CSS custom properties
-- ✅ Styled header, grid, and slots all reading from those variables
+- ✅ Styled header, grid, and cards all reading from those variables
 - ✅ A page that looks finished and consistent
 - ✅ (If you did the practices) the ability to re-theme the app by changing a few values
 
@@ -196,4 +195,4 @@ Next: recap what you learned, check your progress against the objectives, and se
 
 ---
 
-[Home](index.md) · [Previous: Game slots](04-game-slots.md) · [Next: Summary](06-summary.md)
+[Home](index.md) · [Previous: Cards and lists](04-game-slots.md) · [Next: Summary](06-summary.md)

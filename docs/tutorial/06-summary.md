@@ -11,11 +11,11 @@ You made it! Let's recap what you built and learned, check your progress against
 
 ## What you built
 
-You now have a running React app that renders the **EZ-Games launcher**:
+You now have a running React app that renders **your own web page** — in this tutorial's example, the **EZ-Games launcher**:
 
-- A **logo and title** at the top, driven by a `Header` component that takes `title` and `tagline` props
-- A **grid of placeholder game slots**, rendered from a `GAMES` array with `.map()`, each drawn by a `GameSlot` component
-- An **SVG placeholder icon** per slot from the `GameIcon` component
+- A **title at the top**, driven by a `Header` component that takes `title` and `tagline` props — your site's name slots in here
+- A **grid of cards**, rendered from an array with `.map()`, each drawn by a card component
+- An **SVG placeholder icon** per card from the `GameIcon` component
 - A **single consistent color scheme** defined with CSS custom properties and reused by every component
 
 ## Check your progress
@@ -24,17 +24,17 @@ You now have a running React app that renders the **EZ-Games launcher**:
 | --- | --- | --- |
 | Create and run a React project with Vite | [Section 2](02-scaffolding.md) — `npm create vite@latest`, `npm run dev` | |
 | Explain components and write JSX | [Section 3](03-components-and-jsx.md) — `Header`, `className`, expressions | |
-| Render a list from data with `.map()` and props | [Section 4](04-game-slots.md) — `GAMES`, `GameSlot`, `key` | |
+| Render a list from data with `.map()` and props | [Section 4](04-game-slots.md) — your array, card component, `key` | |
 | Theme consistently with CSS custom properties | [Section 5](05-styling-theming.md) — `:root`, `var()`, light theme | |
-| See how the launcher grows into a hub | This section — adding a game = adding an array entry | |
+| See how the structure grows | This section — new content = a new array entry, new components = a bigger page | |
 
-## How this becomes EZ-Games
+## How this becomes your page
 
-This launcher was built to grow. The pieces are already in place for the full project described in the [proposal](../proposal/proposal.md):
+Whatever you're building, the pattern is the same. For the EZ-Games example, the pieces are already in place for the full project described in the [proposal](../proposal/proposal.md):
 
-- **New games** — a finished game becomes a component, and its `GAMES` entry switches from a "Coming Soon" placeholder to a real slot. Tic Tac Toe is next, with a three-level bot.
+- **New games** — a finished game becomes a component, and its array entry switches from a "Coming Soon" placeholder to a real slot. Tic Tac Toe is next, with a three-level bot. For your own page, a new section works the same way: another component, another array entry.
 - **Color schemes** — the CSS variables are the theming system. Preset schemes are just different sets of variable values, applied by swapping a class or attribute on the root.
-- **Local stats** — win streaks and totals per difficulty will be saved with the browser's `localStorage` API, so no account or server is needed.
+- **Local stats** — win streaks and totals per difficulty will be saved with the browser's `localStorage` API, so no account or server is needed. Any site can use the same trick for remembering preferences.
 - **Deployment** — `npm run build` produces static files that any static host can serve, including GitHub Pages.
 
 Every future feature mounts into the structure you built here rather than replacing it.

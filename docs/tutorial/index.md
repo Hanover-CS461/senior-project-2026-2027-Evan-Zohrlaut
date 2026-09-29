@@ -5,11 +5,11 @@ layout: default
 
 # EZ-Games Tutorial
 
-## Building the Game Launcher with React and Vite
+## Building a Web Page with React and Vite
 
-Welcome! This tutorial walks you through building the **main launcher page** of EZ-Games — a web game hub where players pick a game from a collection. By the end you will have a working launcher with a **logo/title at the top** and a grid of **placeholder game slots** that more games can plug into later.
+Welcome! This tutorial walks you through building a **modern web page with React and Vite**: a homepage with a **title at the top** and a **grid of cards** in the middle. The running example is a **game launcher** called EZ-Games — a hub where players pick a game from a collection — but the steps are identical for any page: a portfolio, a link hub, a personal site. **Name your project whatever you like.**
 
-> This tutorial is part of the [EZ-Games senior project](../proposal/proposal.md). The code you write here is the real starting point for the project — the launcher is built as a React app that future games will mount into.
+> This tutorial also serves as the starting point of the [EZ-Games senior project](../proposal/proposal.md) — the example page is built as a real React app that future games mount into. If you're following along for your own page instead, just substitute your own project name and content as you go.
 
 ## Table of contents
 
@@ -17,10 +17,10 @@ Welcome! This tutorial walks you through building the **main launcher page** of 
 | --- | --- | --- |
 | 1 | [Introduction](01-introduction.md) | What you'll build, who this is for, prerequisites |
 | 2 | [Scaffolding the project](02-scaffolding.md) | Create and run a Vite + React project |
-| 3 | [Components and JSX](03-components-and-jsx.md) | React's component model; build the header with the logo/title |
-| 4 | [Game slots and lists](04-game-slots.md) | Render placeholder slots from data with props |
+| 3 | [Components and JSX](03-components-and-jsx.md) | React's component model; build the header with your title |
+| 4 | [Cards and lists](04-game-slots.md) | Render a grid of cards from data with props |
 | 5 | [Styling and theming](05-styling-theming.md) | One consistent look using CSS custom properties |
-| 6 | [Summary and next steps](06-summary.md) | What you learned, exercises, and where the app goes next |
+| 6 | [Summary and next steps](06-summary.md) | What you learned, exercises, and where your page goes next |
 
 ## How this tutorial works
 

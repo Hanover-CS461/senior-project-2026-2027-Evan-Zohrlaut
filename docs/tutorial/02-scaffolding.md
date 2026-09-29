@@ -17,16 +17,16 @@ Open a terminal in the folder where you want the project to live (for example, y
 npm create vite@latest
 ```
 
-Vite will ask you two questions:
+Vite will ask you a few questions:
 
-1. **Project name** — type `ez-games` and press Enter.
+1. **Project name** — type the project name you chose in the introduction (the example is `ez-games`) and press Enter.
 2. **Select a framework** — use the arrow keys to highlight **React**, press Enter.
 3. **Select a variant** — choose **JavaScript** (not TypeScript), press Enter.
 
-Vite creates a folder named `ez-games` containing the starter project. Move into it and install the dependencies:
+Vite creates a folder named after your project containing the starter project. Move into it and install the dependencies:
 
 ```bash
-cd ez-games
+cd ez-games        # replace with your project's name
 npm install
 ```
 
@@ -98,7 +98,7 @@ Three things are happening here, and they're the core pattern of every React app
 
 At this point you should have:
 
-- ✅ A `ez-games` folder created by Vite
+- ✅ A project folder created by Vite, named whatever you chose
 - ✅ Dependencies installed with `npm install`
 - ✅ The dev server running at `http://localhost:5173`
 - ✅ An idea of what `main.jsx` and `index.html` do

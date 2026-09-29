@@ -5,9 +5,9 @@ layout: default
 
 # 3. Components and JSX
 
-[Home](index.md) · [Previous: Scaffolding](02-scaffolding.md) · [Next: Game slots](04-game-slots.md)
+[Home](index.md) · [Previous: Scaffolding](02-scaffolding.md) · [Next: Cards and lists](04-game-slots.md)
 
-Now you'll learn the two ideas everything in React is built on — **components** and **JSX** — and use them to build the first real piece of your launcher: the **header** with the logo and title at the top.
+Now you'll learn the two ideas everything in React is built on — **components** and **JSX** — and use them to build the first real piece of your page: the **header** with your site's title at the top.
 
 ## What is a component?
 
@@ -28,7 +28,7 @@ React components:
 - Are **reusable** — once you define one, you can use it anywhere.
 - Are **composable** — components can contain other components.
 
-The whole launcher will be one `App` component that renders a `Header` component and several `GameSlot` components. That structure is what makes "adding more games" a matter of adding components, not rewriting the page.
+The whole page will be one `App` component that renders a `Header` component and several card components. That structure is what makes "adding more content" a matter of adding components, not rewriting the page.
 
 ## What is JSX?
 
@@ -55,7 +55,7 @@ React's official docs explain this more fully: [Writing Markup with JSX](https:/
 
 ## Step 1 — Replace the starter `App.jsx`
 
-Open `src/App.jsx` and replace its contents with a minimal version of your launcher that just renders the header:
+Open `src/App.jsx` and replace its contents with a minimal version of your page that just renders the header:
 
 ```jsx
 import './App.css'
@@ -104,6 +104,8 @@ export default Header
 
 That inline `<svg>` is your **logo** — a stylized "X" in a rounded square. It uses `var(--color-accent)` and `var(--color-bg)`, CSS custom properties you'll define in the styling section. For now the browser uses the fallback behavior: undefined variables mean the properties are simply missing, so the logo may look blank until Section 5.
 
+The title and tagline are hard-coded to the example right now — that's fine for a first version. In the next step you'll make them into props so your own site's name slots straight in.
+
 Save both files and check the browser. The starter page is gone; you should see **"EZ-Games"** with its tagline at the top — your logo and title are in place.
 
 ## Step 3 — Pass data to a component with props
@@ -136,7 +138,7 @@ function Header({ title, tagline }) {
 export default Header
 ```
 
-Now `Header` is a component that says "give me a `title` and a `tagline`, and I'll draw the header." Update `App.jsx` to pass them:
+Now `Header` is a component that says "give me a `title` and a `tagline`, and I'll draw the header." Update `App.jsx` to pass them — using **your** project name and tagline from the introduction:
 
 ```jsx
 import './App.css'
@@ -153,7 +155,7 @@ function App() {
 export default App
 ```
 
-Save and check the browser — the header looks identical. The difference is now the header is **data-driven**: the same component could render "Coolmath" or "Poki" just by passing different props. That's the whole point of props, and it's exactly how the game slots in the next section will work.
+Save and check the browser — the header looks identical. The difference is now the header is **data-driven**: the same component could render "Coolmath" or "Poki" — or your own site's name — just by passing different props. That's the whole point of props, and it's exactly how the cards in the next section will work.
 
 See the official guide: [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component).
 
@@ -173,8 +175,8 @@ At this point you should have:
 - ✅ The browser showing the EZ-Games header at the top
 - ✅ A working mental model of components, JSX, and props
 
-Next: build the grid of placeholder game slots from a list of data.
+Next: build the grid of cards from a list of data.
 
 ---
 
-[Home](index.md) · [Previous: Scaffolding](02-scaffolding.md) · [Next: Game slots](04-game-slots.md)
+[Home](index.md) · [Previous: Scaffolding](02-scaffolding.md) · [Next: Cards and lists](04-game-slots.md)

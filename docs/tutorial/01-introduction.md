@@ -9,11 +9,11 @@ layout: default
 
 ## What you'll build
 
-You'll build the **main launcher page** of EZ-Games: a screen with a **logo and title at the top** and a grid of **placeholder slots** where future games will live.
+You'll build a **modern web page with React and Vite**: a **title at the top** and a **grid of cards** in the middle. The example throughout this tutorial is the **EZ-Games game launcher** — a screen with a logo and title at the top and placeholder slots where games will live — but the same steps build any page: a portfolio, a link hub, a personal site. Pick your own project name and site title before you start.
 
 ![The finished launcher page](assets/launcher-preview.svg){: width="640"}
 
-_Figure 1. The launcher you'll build: a header with logo/title, and a grid of game slots._
+_Figure 1. The example page you'll build: a header with logo/title, and a grid of cards._
 
 ## Learning objectives
 
@@ -23,9 +23,9 @@ After finishing this tutorial you'll be able to:
 2. **Explain** what a React component is and write one in JSX.
 3. **Render a list** of items from data using `.map()` and props.
 4. **Theme a page** consistently using CSS custom properties.
-5. **See how the launcher grows** into a hub that more games plug into.
+5. **See how the structure grows** — the example is a game launcher, but the same skeleton becomes any web page.
 
-These are exactly the skills the EZ-Games project needs to add its first game (Tic Tac Toe) later.
+These are the skills the EZ-Games project needs to add its first game (Tic Tac Toe) later — and they're the skills any modern web page is built from.
 
 ## Who this is for
 
@@ -57,14 +57,23 @@ If that describes you, you're in the right place. If you're comfortable with pla
 
 Run both version checks now; if `node --version` prints something like `v22.x.x`, you're ready.
 
+### Choose your own names
+
+This tutorial's example is **EZ-Games**, but you can build anything. Pick two things before you start and use them wherever the tutorial says `ez-games` or "EZ-Games":
+
+1. **A project name** — used for the folder and the npm project (the example is `ez-games`).
+2. **A site title** — shown in the header at the top of your page (the example is `EZ-Games`).
+
+From here on, every instruction uses the example names — substitute yours as you go.
+
 ## How the tutorial is organized
 
 | Section | What you'll do |
 | --- | --- |
 | [1. Introduction](01-introduction.md) | You are here |
 | [2. Scaffolding the project](02-scaffolding.md) | Create a Vite + React project and run it |
-| [3. Components and JSX](03-components-and-jsx.md) | Learn components; build the header (logo/title) |
-| [4. Game slots and lists](04-game-slots.md) | Build placeholder slots from data |
+| [3. Components and JSX](03-components-and-jsx.md) | Learn components; build the header (your site's title) |
+| [4. Cards and lists](04-game-slots.md) | Build a grid of cards from data |
 | [5. Styling and theming](05-styling-theming.md) | Give everything one consistent look |
 | [6. Summary and next steps](06-summary.md) | Recap, exercises, and where this goes next |
 

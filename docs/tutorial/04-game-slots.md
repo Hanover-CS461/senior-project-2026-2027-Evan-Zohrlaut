@@ -1,17 +1,17 @@
 ---
-title: 4. Game slots and lists
+title: 4. Cards and lists
 layout: default
 ---
 
-# 4. Game slots and lists
+# 4. Cards and lists
 
 [Home](index.md) · [Previous: Components and JSX](03-components-and-jsx.md) · [Next: Styling](05-styling-theming.md)
 
-The launcher's job is to show the collection of games. In this section you'll build the **placeholder game slots** and render them from a list of data — which is exactly how a real hub stays easy to grow.
+The main part of your page is a **grid of cards** — the content your visitors came to see. In the example those cards are game slots, but the pattern is the same for any page: links, projects, photos, posts. In this section you'll build the cards and render them from a list of data — which is exactly how any collection stays easy to grow.
 
-## Step 1 — Model the games as data
+## Step 1 — Model the content as data
 
-Instead of writing three almost-identical cards by hand, define the collection as a JavaScript array. Each game is an object with an `id`, a `name`, a `description`, and a `variant` that picks which icon to show:
+Instead of writing several almost-identical cards by hand, define the collection as a JavaScript array. In the example, each item is a game with an `id`, a `name`, a `description`, and a `variant` that picks which icon to show. Your own cards would follow the same shape with whatever fields you need:
 
 ```jsx
 const GAMES = [
@@ -21,11 +21,11 @@ const GAMES = [
 ]
 ```
 
-> **Why data first?** Later, when Tic Tac Toe is finished, you flip it from a placeholder to a real game by changing its entry — or you add a fourth object to add a fourth game. The UI doesn't have to change at all. This is the "hub" idea of EZ-Games in miniature.
+> **Why data first?** Later, when Tic Tac Toe is finished, you flip it from a placeholder to a real game by changing its entry — or you add a fourth object to add a fourth game. For your own page, that's how you add a new link or project. The UI doesn't have to change at all. This is the "hub" idea of EZ-Games in miniature — and the "collection" idea behind any data-driven page.
 
-## Step 2 — Create the `GameSlot` component
+## Step 2 — Create the card component
 
-Each item in that list will be rendered by a `GameSlot` component. Create `src/components/GameSlot.jsx`:
+Each item in that list will be rendered by a card component. The example calls it `GameSlot`; you'd name yours after whatever your cards hold. Create `src/components/GameSlot.jsx`:
 
 ```jsx
 import GameIcon from './GameIcon.jsx'
@@ -44,7 +44,7 @@ function GameSlot({ game }) {
 export default GameSlot
 ```
 
-This component receives the whole `game` object as a single prop and renders its `name`, `description`, and an icon. The icon comes from another component, `GameIcon`, which handles the SVG placeholder art — separating "what icon to draw" from "how the slot is laid out."
+This component receives the whole item as a single prop and renders its `name`, `description`, and an icon. The icon comes from another component, `GameIcon`, which handles the SVG placeholder art — separating "what icon to draw" from "how the card is laid out."
 
 ## Step 3 — Create the `GameIcon` component
 
@@ -118,7 +118,7 @@ Three things to notice in the new lines:
 - **`game={game}`** — passes the current game object into the `GameSlot` as a prop.
 - **`key={game.id}`** — a special prop that React uses to keep track of each list item. React requires a stable, unique `key` for every item in a list; using the `id` is the standard approach.
 
-Save and check the browser. Below the header you should now see **three slots**: one with an "X" (Tic Tac Toe) and two with "+" placeholders. They won't look styled yet — Section 5 fixes that.
+Save and check the browser. Below the header you should now see **three cards**: one with an "X" (Tic Tac Toe) and two with "+" placeholders. They won't look styled yet — Section 5 fixes that.
 
 ## Step 5 — A quick style pass so you can see the layout
 
@@ -139,25 +139,25 @@ The grid layout comes from a small bit of CSS. Create `src/App.css` (or replace 
 }
 ```
 
-`grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))` makes the grid **responsive**: it places as many columns as fit at 200px minimum and grows them to share the row. Resize the browser window and watch the slots reflow.
+`grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))` makes the grid **responsive**: it places as many columns as fit at 200px minimum and grows them to share the row. Resize the browser window and watch the cards reflow.
 
 See the official guides: [Rendering Lists](https://react.dev/learn/rendering-lists) and [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component).
 
 ## Practice — make it yours
 {: #practice-make-it-yours }
 
-> **Practice 3 (recommended):** Add a fourth game to the `GAMES` array — e.g. `{ id: 'slot-4', name: 'Coming Soon', description: 'Reserved for the next game', variant: 'plus' }`. Save and confirm a fourth slot appears. This is the whole "add a game" workflow in one line.
+> **Practice 3 (recommended):** Add a fourth game to the `GAMES` array — e.g. `{ id: 'slot-4', name: 'Coming Soon', description: 'Reserved for the next game', variant: 'plus' }`. Save and confirm a fourth card appears. This is the whole "add an item" workflow in one line — for your own page, add a fourth entry to *your* array.
 >
-> **Practice 4 (harder):** The Tic Tac Toe slot currently shows a "+"-style icon. Change `GAMES` so Tic Tac Toe uses `variant: 'x'` if it doesn't already, then give `GameIcon` a third shape (try an `o` variant — a `<circle>`) and use it somewhere.
+> **Practice 4 (harder):** The Tic Tac Toe card currently shows a "+"-style icon. Change `GAMES` so Tic Tac Toe uses `variant: 'x'` if it doesn't already, then give `GameIcon` a third shape (try an `o` variant — a `<circle>`) and use it somewhere.
 
 ## Section check
 
 At this point you should have:
 
-- ✅ A `GAMES` array driving the collection
-- ✅ `GameSlot` and `GameIcon` components with props
-- ✅ `.map()` rendering the slots, each with a `key`
-- ✅ A responsive grid of three (or four) slots
+- ✅ An array of data driving the collection
+- ✅ Card and icon components with props
+- ✅ `.map()` rendering the cards, each with a `key`
+- ✅ A responsive grid of three (or four) cards
 
 Next: give the whole page one consistent look with CSS custom properties.
 
