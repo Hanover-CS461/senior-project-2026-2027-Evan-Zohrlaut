@@ -72,7 +72,15 @@ function App() {
 export default App
 ```
 
-`App` renders a `<div className="launcher">` (a container you'll style later) and inside it the `<Header />` component — which doesn't exist yet. If you save now, the page breaks. Let's fix that.
+Let's read this file top to bottom before saving:
+
+- **`import './App.css'`** — pulls in the stylesheet for this component.
+- **`import Header from './components/Header.jsx'`** — imports a component named `Header` from a file inside a new `components` folder. (You'll create both in Step 2.)
+- **`function App() { return (...) }`** — `App` is a component: a function that returns what should be drawn on the page.
+- **`<div className="launcher">`** — a container `div`. The `className` attribute is JSX's version of HTML's `class` (more on that below).
+- **`<Header />`** — renders the `Header` component inside the container. It looks like an HTML tag, but it's actually *your own component*.
+
+> **What just happened (or what's about to):** `App` now renders a `<div className="launcher">` (a container you'll style later) and inside it the `<Header />` component — **which doesn't exist yet**. If you save now, the page breaks. That's expected: Step 2 creates the missing component and fixes it.
 
 ## Step 2 — Create the `Header` component
 
@@ -102,11 +110,14 @@ function Header() {
 export default Header
 ```
 
-That inline `<svg>` is your **logo** — a stylized "X" in a rounded square. It uses `var(--color-accent)` and `var(--color-bg)`, CSS custom properties you'll define in the styling section. For now the browser uses the fallback behavior: undefined variables mean the properties are simply missing, so the logo may look blank until Section 5.
+Let's read it before saving:
 
-The title and tagline are hard-coded to the example right now — that's fine for a first version. In the next step you'll make them into props so your own site's name slots straight in.
+- **`<header className="header">`** — a semantic HTML `<header>` element. Note it's not the component; it's the real HTML tag the component returns.
+- **The `<svg>`** — your **logo**: a stylized "X" in a rounded square. It uses `var(--color-accent)` and `var(--color-bg)`, CSS custom properties you'll define in the styling section. For now the browser uses the fallback behavior: undefined variables mean the properties are simply missing, so the logo may look blank until Section 5.
+- **`<h1 className="header__title">`** and the `<p>` — the title and tagline. They're hard-coded to the example right now — that's fine for a first version. In Step 3 you'll make them into props so your own site's name slots straight in.
+- **`export default Header`** — makes the component available to other files, so `App.jsx`'s `import Header` can find it.
 
-Save both files and check the browser. The starter page is gone; you should see **"EZ-Games"** with its tagline at the top — your logo and title are in place.
+> **Check:** save both files and look at the browser. The starter page is gone; you should see **"EZ-Games"** with its tagline at the top — your logo and title are in place. (The logo itself may look blank until Section 5 defines the color variables.)
 
 ## Step 3 — Pass data to a component with props
 
@@ -155,7 +166,9 @@ function App() {
 export default App
 ```
 
-Save and check the browser — the header looks identical. The difference is now the header is **data-driven**: the same component could render "Coolmath" or "Poki" — or your own site's name — just by passing different props. That's the whole point of props, and it's exactly how the cards in the next section will work.
+> **What just happened:** `Header({ title, tagline })` is *destructuring* — it pulls `title` and `tagline` out of the props object that `App` passes in. Then `{title}` and `{tagline}` in the JSX are expressions that insert those values. The header now gets its text from outside the component instead of hard-coding it.
+>
+> **Check:** save and look at the browser — the header looks identical. The difference is now the header is **data-driven**: the same component could render "Coolmath" or "Poki" — or your own site's name — just by passing different props. That's the whole point of props, and it's exactly how the cards in the next section will work.
 
 See the official guide: [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component).
 

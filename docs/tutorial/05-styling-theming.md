@@ -54,6 +54,10 @@ body {
 
 Notice how the whole palette lives in one block at the top. The `body` rule then uses `var(--color-bg)` and `var(--color-text)` — so the page background and text color are *driven by* the scheme, not hard-coded. This is the theming story: the dark theme is just these seven variable values.
 
+> **What just happened:** the page background and text color switched from the browser default to your variables — you'll see the difference immediately. The header logo, which was blank, also picks up `--color-accent` and `--color-bg` now.
+>
+> **Check:** save and look at the browser. The page background should now be dark navy (`#1e1e2e`) with light text, and the logo's "X" should be visible.
+
 ## Step 2 — Style the header
 
 Now the logo's `var(--color-accent)` and `var(--color-bg)` resolve to real values, and you can lay out the header. Create `src/components/Header.css`:
@@ -93,6 +97,10 @@ function Header({ title, tagline }) {
   // ... unchanged
 }
 ```
+
+> **What just happened:** the `flex` layout puts the logo and text side by side, and `gap: 1rem` spaces them. The logo gets its size from `.header__logo`, and the tagline is dimmed with the muted color variable.
+>
+> **Check:** save and look at the browser. The logo and title should now sit next to each other at the top, nicely spaced, with the tagline in a dimmer color.
 
 The naming convention `header__logo`, `header__title`, `header__tagline` is **BEM** (Block, Element, Modifier): the block is `header`, and each piece inside is an element of that block. It keeps styles predictable and collision-free as the project grows.
 
@@ -148,6 +156,10 @@ function GameSlot({ game }) {
   // ... unchanged
 }
 ```
+
+> **What just happened:** each card gets a surface background, rounded corners, and a dashed border; the icon is sized and centered; the badge becomes a pill with the accent color.
+>
+> **Check:** save and look at the browser. The three cards should now look finished — solid card backgrounds, dashed placeholder borders, and a colored "Coming soon" badge.
 
 The cards use dashed borders (`border: 2px dashed ...`) and the "Coming soon" badge — clear visual signals that these are placeholders waiting for real content. The card background, text color, and badge color all come from CSS variables, so every part of the page belongs to the same theme.
 

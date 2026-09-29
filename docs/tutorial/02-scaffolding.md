@@ -17,40 +17,52 @@ Open a terminal in the folder where you want the project to live (for example, y
 npm create vite@latest
 ```
 
+This command downloads and runs Vite's project generator. It does **not** install anything into your project yet — it just asks you a few questions and then creates a starter project for you.
+
 Vite will ask you a few questions:
 
 1. **Project name** — type the project name you chose in the introduction (the example is `ez-games`) and press Enter.
 2. **Select a framework** — use the arrow keys to highlight **React**, press Enter.
 3. **Select a variant** — choose **JavaScript** (not TypeScript), press Enter.
 
-Vite creates a folder named after your project containing the starter project. Move into it and install the dependencies:
+> **What just happened:** Vite created a folder named after your project containing the starter project. Inside it you'll find `package.json` (the list of dependencies), `index.html` (the single page), and a `src` folder (where your code will live).
+
+## Step 2 — Install the dependencies
+
+Move into the project folder and install what `package.json` lists:
 
 ```bash
 cd ez-games        # replace with your project's name
 npm install
 ```
 
-`npm install` reads the `package.json` that Vite generated and downloads everything the project needs into a `node_modules` folder. This can take a minute the first time.
+> **What just happened:** `npm install` reads `package.json`, downloads everything the project needs (including React itself), and puts it in a `node_modules` folder. This can take a minute the first time.
+>
+> **Check:** when the command finishes, the terminal returns to a normal prompt with no errors. You'll also see a `node_modules` folder appear in the project.
 
-## Step 2 — Run the dev server
+## Step 3 — Run the dev server
+
+Now start the development server, which lets you see your page as you build it:
 
 ```bash
 npm run dev
 ```
 
-You'll see output ending with a `Local:` URL, usually `http://localhost:5173`. Open that address in your browser. You should see the default Vite + React starter page:
+> **What just happened:** `npm run dev` runs the `dev` script from `package.json`. Vite starts a local web server and prints a `Local:` URL, usually `http://localhost:5173`.
+
+Open that address in your browser. You should see the default Vite + React starter page:
 
 ![The default Vite + React starter page](assets/vite-default-page.svg){: width="640"}
 
 _Figure 2. The starter page Vite generates for you._
 
-Leave the dev server running — every change you make to the code from now on will appear in the browser instantly. This is called **hot module replacement (HMR)**.
-
+> **Check:** leave the dev server running — every change you make to the code from now on will appear in the browser instantly. This is called **hot module replacement (HMR)**.
+>
 > **Troubleshooting:** If `npm run dev` fails, the most common cause is an old Node.js version. Run `node --version` and confirm it's v18 or newer ([Node.js downloads](https://nodejs.org/)). You may also need to run `npm install` again.
 
-## What's in the project?
+## Step 4 — Tour the project structure
 
-Take a look at the structure Vite created:
+Open the project in your code editor. Take a look at the structure Vite created:
 
 ```
 ez-games/
@@ -66,12 +78,14 @@ ez-games/
 └── vite.config.js     # Vite configuration
 ```
 
-The two files that matter most right now:
+Two files matter most right now:
 
 - **`index.html`** — the browser loads this one HTML page. It contains a single `<div id="root">` and a `<script>` tag pointing at `src/main.jsx`.
 - **`src/main.jsx`** — the entry point. It finds the `#root` div and tells React to render the `App` component inside it.
 
-Let's read `main.jsx`:
+## Step 5 — Read the entry point
+
+Open `src/main.jsx` and read it line by line:
 
 ```jsx
 import { StrictMode } from 'react'

@@ -44,6 +44,14 @@ function GameSlot({ game }) {
 export default GameSlot
 ```
 
+Let's read it before saving:
+
+- **`import GameIcon from './GameIcon.jsx'`** — imports the icon component you'll create in Step 3.
+- **`function GameSlot({ game })`** — the component receives the whole item as a single prop called `game` and destructures it.
+- **`<GameIcon variant={game.variant} />`** — renders the icon component and hands it the `variant` value from the data.
+- **`<article>`** — a semantic HTML element for a self-contained card.
+- **`{game.name}` and `{game.description}`** — expressions that insert values from the item's data.
+
 This component receives the whole item as a single prop and renders its `name`, `description`, and an icon. The icon comes from another component, `GameIcon`, which handles the SVG placeholder art — separating "what icon to draw" from "how the card is laid out."
 
 ## Step 3 — Create the `GameIcon` component
@@ -80,6 +88,8 @@ export default GameIcon
 ```
 
 Note the `{isX ? (...) : (...)}` inside the `<svg>` — that's a JavaScript ternary expression embedded in JSX, choosing which path to draw based on the `variant` prop. Also note `variant = 'plus'`: the `= 'plus'` gives the prop a **default value** used when no `variant` is passed.
+
+> **Check:** save and look at the browser. Nothing new shows up yet — the icon component exists but nothing renders it yet. Step 4 connects everything.
 
 ## Step 4 — Render the list in `App.jsx`
 
@@ -118,7 +128,9 @@ Three things to notice in the new lines:
 - **`game={game}`** — passes the current game object into the `GameSlot` as a prop.
 - **`key={game.id}`** — a special prop that React uses to keep track of each list item. React requires a stable, unique `key` for every item in a list; using the `id` is the standard approach.
 
-Save and check the browser. Below the header you should now see **three cards**: one with an "X" (Tic Tac Toe) and two with "+" placeholders. They won't look styled yet — Section 5 fixes that.
+> **What just happened:** `GAMES.map(...)` runs once per item in the array. For the first item it renders a `GameSlot` with the "X" icon; for the other two it renders slots with "+" icons. The `key` tells React which card is which, so it can update the right one when the data changes.
+>
+> **Check:** save and look at the browser. Below the header you should now see **three cards**: one with an "X" (Tic Tac Toe) and two with "+" placeholders. They won't look styled yet — Section 5 fixes that.
 
 ## Step 5 — A quick style pass so you can see the layout
 
