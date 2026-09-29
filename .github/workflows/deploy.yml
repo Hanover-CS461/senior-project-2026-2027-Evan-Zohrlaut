@@ -29,11 +29,11 @@ jobs:
           bundler-cache: true
 
       - name: Install Jekyll dependencies
-        working-directory: docs/proposal
+        working-directory: docs
         run: bundle install
 
       - name: Build the site
-        working-directory: docs/proposal
+        working-directory: docs
         run: bundle exec jekyll build
 
       - name: Set up Node.js (for Marp CLI)
@@ -43,20 +43,20 @@ jobs:
 
       - name: Build Marp slides
         working-directory: docs/proposal
-        run: npx --yes @marp-team/marp-cli@latest -I slides --theme slides/dracula.css -o _site/slides
+        run: npx --yes @marp-team/marp-cli@latest -I slides --theme slides/dracula.css -o ../_site/proposal/slides
 
       - name: Copy slide assets
         working-directory: docs/proposal
         run: |
           if [ -d slides/assets ]; then
-            mkdir -p _site/slides
-            cp -r slides/assets _site/slides/
+            mkdir -p ../_site/proposal/slides
+            cp -r slides/assets ../_site/proposal/slides/
           fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs/proposal/_site'
+          path: './docs/_site'
 
   deploy-pages:
     runs-on: ubuntu-latest

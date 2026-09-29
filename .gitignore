@@ -1,2 +1,6 @@
-docs/proposal/_site
+docs/_site
 docs/tmp
+
+# Node / Vite
+node_modules
+dist

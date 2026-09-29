@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="system-ui, Arial, sans-serif">
+  <!-- background -->
+  <rect width="900" height="560" fill="#1e1e2e"/>
+
+  <!-- header -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="56" height="56" rx="14" fill="#7aa2f7"/>
+    <path d="M18 18l20 20M38 18L18 38" stroke="#1e1e2e" stroke-width="6" stroke-linecap="round"/>
+    <text x="72" y="28" fill="#eef1f8" font-size="26" font-weight="700">EZ-Games</text>
+    <text x="72" y="50" fill="#a6adc0" font-size="14">A place for quick, fun games — all in one site.</text>
+  </g>
+
+  <!-- slot 1 (available) -->
+  <g transform="translate(40, 130)">
+    <rect width="250" height="190" rx="12" fill="#2a2a3c" stroke="#7aa2f7" stroke-width="2"/>
+    <g transform="translate(101, 18)">
+      <path d="M10 10l28 28M38 10L10 38" fill="none" stroke="#7aa2f7" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="125" y="100" fill="#eef1f8" font-size="18" font-weight="600" text-anchor="middle">Tic Tac Toe</text>
+    <text x="125" y="122" fill="#a6adc0" font-size="13" text-anchor="middle">The first game</text>
+    <rect x="80" y="140" width="90" height="26" rx="13" fill="#7aa2f7"/>
+    <text x="125" y="158" fill="#1e1e2e" font-size="12" font-weight="700" text-anchor="middle">Coming soon</text>
+  </g>
+
+  <!-- slot 2 (placeholder) -->
+  <g transform="translate(325, 130)">
+    <rect width="250" height="190" rx="12" fill="#2a2a3c" stroke="#3b3b52" stroke-dasharray="8 6"/>
+    <g transform="translate(101, 18)">
+      <path d="M24 8v32M8 24h32" stroke="#a6adc0" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="125" y="100" fill="#eef1f8" font-size="18" font-weight="600" text-anchor="middle">Coming Soon</text>
+    <text x="125" y="122" fill="#a6adc0" font-size="13" text-anchor="middle">Reserved for the next game</text>
+    <rect x="80" y="140" width="90" height="26" rx="13" fill="#7aa2f7"/>
+    <text x="125" y="158" fill="#1e1e2e" font-size="12" font-weight="700" text-anchor="middle">Coming soon</text>
+  </g>
+
+  <!-- slot 3 (placeholder) -->
+  <g transform="translate(610, 130)">
+    <rect width="250" height="190" rx="12" fill="#2a2a3c" stroke="#3b3b52" stroke-dasharray="8 6"/>
+    <g transform="translate(101, 18)">
+      <path d="M24 8v32M8 24h32" stroke="#a6adc0" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <text x="125" y="100" fill="#eef1f8" font-size="18" font-weight="600" text-anchor="middle">Coming Soon</text>
+    <text x="125" y="122" fill="#a6adc0" font-size="13" text-anchor="middle">Reserved for the next game</text>
+    <rect x="80" y="140" width="90" height="26" rx="13" fill="#7aa2f7"/>
+    <text x="125" y="158" fill="#1e1e2e" font-size="12" font-weight="700" text-anchor="middle">Coming soon</text>
+  </g>
+
+  <text x="450" y="360" fill="#a6adc0" font-size="13" text-anchor="middle">Figure 1: The launcher page you will build.</text>
+</svg>

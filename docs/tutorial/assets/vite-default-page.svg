@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" font-family="system-ui, Arial, sans-serif">
+  <!-- window background -->
+  <rect width="900" height="500" fill="#282a36"/>
+  <rect x="120" y="40" width="660" height="400" rx="12" fill="#ffffff" stroke="#44475a" stroke-width="2"/>
+
+  <!-- browser chrome -->
+  <circle cx="140" cy="60" r="8" fill="#ff5555"/>
+  <circle cx="162" cy="60" r="8" fill="#f1fa8c"/>
+  <circle cx="184" cy="60" r="8" fill="#50fa7b"/>
+
+  <!-- react logo (simplified atom) -->
+  <g transform="translate(450, 190)">
+    <ellipse cx="0" cy="0" rx="70" ry="26" fill="none" stroke="#61dafb" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="70" ry="26" fill="none" stroke="#61dafb" stroke-width="5" transform="rotate(60)"/>
+    <ellipse cx="0" cy="0" rx="70" ry="26" fill="none" stroke="#61dafb" stroke-width="5" transform="rotate(120)"/>
+    <circle cx="0" cy="0" r="10" fill="#61dafb"/>
+  </g>
+
+  <text x="450" y="320" fill="#44475a" font-size="30" font-weight="700" text-anchor="middle">Hello Vite + React!</text>
+  <text x="450" y="348" fill="#6272a4" font-size="14" text-anchor="middle">Edit src/App.jsx and save to test HMR</text>
+  <text x="450" y="380" fill="#6272a4" font-size="14" text-anchor="middle">Click on the Vite and React logos to learn more</text>
+</svg>
