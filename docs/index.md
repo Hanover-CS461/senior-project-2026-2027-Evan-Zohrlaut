@@ -7,6 +7,8 @@ layout: default
 
 Welcome to the senior project documentation for **EZ-Games**, a web game hub: one site, a growing collection of quick games, one consistent launcher. No ads, no accounts, stats saved in the browser.
 
+**▶ [Play EZ-Games]({{ '/app/' | relative_url }})** — launch the live app.
+
 ## Explore
 
 - [Project proposal](./proposal/proposal.md) — the full proposal, including features, market comparison, and technology choices
