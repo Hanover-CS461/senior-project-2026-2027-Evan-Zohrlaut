@@ -13,4 +13,12 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Tic Tac Toe' })).toBeInTheDocument()
     expect(screen.getAllByText('Coming Soon')).toHaveLength(2)
   })
+
+  it('links playable games to their hash route', () => {
+    render(<App />)
+    expect(screen.getByRole('link', { name: /tic tac toe/i })).toHaveAttribute(
+      'href',
+      '#/tic-tac-toe',
+    )
+  })
 })
