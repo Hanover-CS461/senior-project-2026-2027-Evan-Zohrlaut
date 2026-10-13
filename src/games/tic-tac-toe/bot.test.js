@@ -29,16 +29,22 @@ describe('beginner', () => {
 describe('pro', () => {
   it('takes an immediate win', () => {
     const board = ['O', 'O', null, 'X', 'X', null, null, null, null]
-    expect(chooseMove(board, 'O', 'pro', () => 0)).toBe(2)
+    expect(chooseMove(board, 'O', 'pro', () => 0.5)).toBe(2)
   })
 
   it('blocks the opponent from winning', () => {
     const board = ['X', 'X', null, null, null, null, null, null, null]
-    expect(chooseMove(board, 'O', 'pro', () => 0)).toBe(2)
+    expect(chooseMove(board, 'O', 'pro', () => 0.5)).toBe(2)
   })
 
-  it('takes the centre when nothing is urgent', () => {
-    expect(chooseMove(createBoard(), 'O', 'pro', () => 0)).toBe(4)
+  it('sometimes slips and plays a random move instead of blocking', () => {
+    const board = ['X', 'X', null, null, null, null, null, null, null]
+    const move = chooseMove(board, 'O', 'pro', sequence([0.1, 0.99]))
+    expect(move).toBe(8)
+  })
+
+  it('no longer always takes the centre', () => {
+    expect(chooseMove(createBoard(), 'O', 'pro', () => 0.9)).toBe(8)
   })
 })
 

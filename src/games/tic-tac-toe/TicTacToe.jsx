@@ -17,7 +17,7 @@ const DEFAULT_BOT_DELAY = 450
 
 const DIFFICULTIES = [
   { id: 'beginner', label: 'Beginner', blurb: 'Plays mostly at random.' },
-  { id: 'pro', label: 'Pro', blurb: 'Blocks and takes winning moves.' },
+  { id: 'pro', label: 'Pro', blurb: 'Blocks and wins, but slips up sometimes.' },
   { id: 'expert', label: 'Expert', blurb: 'Near-perfect; very rarely beaten.' },
 ]
 

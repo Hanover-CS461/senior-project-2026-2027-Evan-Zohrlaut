@@ -1,5 +1,8 @@
 import { EMPTY, SIZE, getLines, getWinner } from './logic.js'
 
+const BEGINNER_BLUNDER_CHANCE = 0.75
+const PRO_BLUNDER_CHANCE = 0.2
+
 export function availableMoves(board) {
   const moves = []
   board.forEach((cell, index) => {
@@ -27,9 +30,9 @@ function winningMove(board, symbol) {
   return null
 }
 
-function beginnerMove(board, symbol, opponent, random) {
+function heuristicMove(board, symbol, opponent, random, blunderChance) {
   const moves = availableMoves(board)
-  if (random() < 0.75) {
+  if (random() < blunderChance) {
     return pickRandom(moves, random)
   }
   const win = winningMove(board, symbol)
@@ -37,17 +40,6 @@ function beginnerMove(board, symbol, opponent, random) {
   const block = winningMove(board, opponent)
   if (block !== null) return block
   return pickRandom(moves, random)
-}
-
-function proMove(board, symbol, opponent, random) {
-  const win = winningMove(board, symbol)
-  if (win !== null) return win
-  const block = winningMove(board, opponent)
-  if (block !== null) return block
-  if (board[4] === EMPTY) return 4
-  const corners = [0, 2, 6, 8].filter((index) => board[index] === EMPTY)
-  if (corners.length > 0) return pickRandom(corners, random)
-  return pickRandom(availableMoves(board), random)
 }
 
 function minimax(board, current, botSymbol, depth) {
@@ -86,7 +78,10 @@ function expertMove(board, symbol) {
 }
 
 export function chooseMove(board, symbol, difficulty, random = Math.random) {
+  const opponent = other(symbol)
   if (difficulty === 'expert') return expertMove(board, symbol)
-  if (difficulty === 'pro') return proMove(board, symbol, other(symbol), random)
-  return beginnerMove(board, symbol, other(symbol), random)
+  if (difficulty === 'pro') {
+    return heuristicMove(board, symbol, opponent, random, PRO_BLUNDER_CHANCE)
+  }
+  return heuristicMove(board, symbol, opponent, random, BEGINNER_BLUNDER_CHANCE)
 }
