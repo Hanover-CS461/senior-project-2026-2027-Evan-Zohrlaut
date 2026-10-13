@@ -1,6 +1,7 @@
+import ThemeMenu from './ThemeMenu.jsx'
 import './Header.css'
 
-function Header({ title, tagline }) {
+function Header({ title, tagline, theme, onThemeChange }) {
   return (
     <header className="header">
       <svg className="header__logo" viewBox="0 0 48 48" aria-hidden="true">
@@ -16,6 +17,7 @@ function Header({ title, tagline }) {
         <h1 className="header__title">{title}</h1>
         <p className="header__tagline">{tagline}</p>
       </div>
+      <ThemeMenu theme={theme} onThemeChange={onThemeChange} />
     </header>
   )
 }

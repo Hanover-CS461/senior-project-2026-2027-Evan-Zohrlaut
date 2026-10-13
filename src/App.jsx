@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header.jsx'
 import GameSlot from './components/GameSlot.jsx'
+import { applyTheme, loadTheme, saveTheme } from './themes.js'
 
 const GAMES = [
   { id: 'tic-tac-toe', name: 'Tic Tac Toe', description: 'The first game', variant: 'x' },
@@ -9,9 +11,21 @@ const GAMES = [
 ]
 
 function App() {
+  const [theme, setTheme] = useState(loadTheme)
+
+  useEffect(() => {
+    applyTheme(theme)
+    saveTheme(theme)
+  }, [theme])
+
   return (
     <div className="launcher">
-      <Header title="EZ-Games" tagline="A place for quick, fun games — all in one site." />
+      <Header
+        title="EZ-Games"
+        tagline="A place for quick, fun games — all in one site."
+        theme={theme}
+        onThemeChange={setTheme}
+      />
       <main className="game-grid">
         {GAMES.map((game) => (
           <GameSlot key={game.id} game={game} />
