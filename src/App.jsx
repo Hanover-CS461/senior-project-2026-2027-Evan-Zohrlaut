@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header.jsx'
 import GameSlot from './components/GameSlot.jsx'
 import TicTacToe from './games/tic-tac-toe/TicTacToe.jsx'
+import Connect4 from './games/connect-4/Connect4.jsx'
 import { applyTheme, loadTheme, saveTheme } from './themes.js'
 
 const GAMES = [
@@ -14,11 +15,11 @@ const GAMES = [
     status: 'playable',
   },
   {
-    id: 'slot-2',
-    name: 'Coming Soon',
-    description: 'Reserved for the next game',
-    variant: 'plus',
-    status: 'coming-soon',
+    id: 'connect-4',
+    name: 'Connect 4',
+    description: 'Line up four in a row to win.',
+    variant: 'connect-4',
+    status: 'playable',
   },
   {
     id: 'slot-3',
@@ -31,6 +32,7 @@ const GAMES = [
 
 const GAME_COMPONENTS = {
   'tic-tac-toe': TicTacToe,
+  'connect-4': Connect4,
 }
 
 function parseRoute(hash) {

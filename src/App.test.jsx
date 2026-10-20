@@ -11,7 +11,8 @@ describe('App', () => {
   it('renders the game slots from the games list', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: 'Tic Tac Toe' })).toBeInTheDocument()
-    expect(screen.getAllByText('Coming Soon')).toHaveLength(2)
+    expect(screen.getByRole('heading', { name: 'Connect 4' })).toBeInTheDocument()
+    expect(screen.getAllByText('Coming Soon')).toHaveLength(1)
   })
 
   it('links playable games to their hash route', () => {
@@ -19,6 +20,10 @@ describe('App', () => {
     expect(screen.getByRole('link', { name: /tic tac toe/i })).toHaveAttribute(
       'href',
       '#/tic-tac-toe',
+    )
+    expect(screen.getByRole('link', { name: /connect 4/i })).toHaveAttribute(
+      'href',
+      '#/connect-4',
     )
   })
 })
