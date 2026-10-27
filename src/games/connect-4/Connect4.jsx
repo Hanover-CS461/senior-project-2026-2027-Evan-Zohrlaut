@@ -200,21 +200,28 @@ function Connect4({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
           const columnFull = !isValidColumn(board, col)
           const disabled =
             finished ||
+            row !== 0 ||
             cell !== EMPTY ||
             columnFull ||
             (opponent === 'bot' && turn !== HUMAN_SYMBOL)
           const classes = ['c4__cell']
           if (cell) classes.push(`c4__cell--${cell}`)
           if (status.line.includes(index)) classes.push('c4__cell--win')
+          const label = cell
+            ? `Column ${col + 1}, row ${row + 1}, ${cell}`
+            : row === 0
+              ? `Drop in column ${col + 1}`
+              : `Column ${col + 1}, row ${row + 1}`
 
           return (
             <button
               key={index}
               type="button"
               className={classes.join(' ')}
+              style={{ '--drop-rows': row }}
               onClick={() => handleCellClick(col)}
               disabled={disabled}
-              aria-label={`Column ${col + 1}, row ${row + 1}${cell ? `, ${cell}` : ''}`}
+              aria-label={label}
             >
               <span className="c4__disc" />
             </button>

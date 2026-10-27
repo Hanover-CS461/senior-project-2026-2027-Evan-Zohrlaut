@@ -120,8 +120,9 @@
 }
 
 .c4__board {
+  --c4-gap: 0.4rem;
   display: grid;
-  gap: 0.4rem;
+  gap: var(--c4-gap);
   max-width: 420px;
   margin: 0 auto;
   padding: 0.6rem;
@@ -160,7 +161,7 @@
 
 .c4__cell--red .c4__disc,
 .c4__cell--yellow .c4__disc {
-  animation: c4-drop 0.18s ease-out;
+  animation: c4-drop 0.32s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .c4__cell--red .c4__disc {
@@ -177,12 +178,19 @@
 
 @keyframes c4-drop {
   from {
-    transform: translateY(-35%);
-    opacity: 0.4;
+    transform: translateY(
+      calc(var(--drop-rows, 0) * -100% - var(--drop-rows, 0) * var(--c4-gap))
+    );
   }
   to {
     transform: translateY(0);
-    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c4__cell--red .c4__disc,
+  .c4__cell--yellow .c4__disc {
+    animation: none;
   }
 }
 

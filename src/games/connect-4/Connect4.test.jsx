@@ -1,14 +1,17 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent, within, waitFor } from '@testing-library/react'
 import Connect4 from './Connect4.jsx'
+import { COLS } from './logic.js'
 
 function cellButtons() {
-  return screen.getAllByRole('button', { name: /^Column \d+, row \d+/i })
+  return screen.getAllByRole('button', {
+    name: /^(Column \d+, row \d+|Drop in column \d+)/i,
+  })
 }
 
 function columnButtons(col) {
   return screen.getAllByRole('button', {
-    name: new RegExp(`^Column ${col + 1},`, 'i'),
+    name: new RegExp(`^(Column ${col + 1},|Drop in column ${col + 1}$)`, 'i'),
   })
 }
 
@@ -89,6 +92,19 @@ describe('Connect4 friend game', () => {
     startGame()
     expect(cellButtons()).toHaveLength(42)
     expect(screen.getByText("Red's turn")).toBeInTheDocument()
+  })
+
+  it('only enables the top row as drop targets', () => {
+    render(<Connect4 />)
+    startGame()
+
+    for (let col = 0; col < COLS; col += 1) {
+      const enabled = columnButtons(col).filter((button) => !button.disabled)
+      expect(enabled).toHaveLength(1)
+      expect(enabled[0]).toHaveAccessibleName(
+        new RegExp(`^Drop in column ${col + 1}$`, 'i'),
+      )
+    }
   })
 
   it('drops a piece to the bottom of the chosen column', () => {
