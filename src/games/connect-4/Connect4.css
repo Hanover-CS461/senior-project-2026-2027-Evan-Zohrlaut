@@ -147,9 +147,15 @@
   cursor: default;
 }
 
-.c4__cell:hover:not(:disabled),
-.c4__cell:focus-visible:not(:disabled) {
-  box-shadow: inset 0 0 0 3px var(--color-accent);
+.c4__cell:enabled {
+  box-shadow: inset 0 0 0 2px var(--color-accent);
+}
+
+.c4__cell:enabled:hover,
+.c4__cell:enabled:focus-visible {
+  box-shadow:
+    inset 0 0 0 3px var(--color-accent),
+    0 0 14px var(--color-accent);
 }
 
 .c4__disc {
