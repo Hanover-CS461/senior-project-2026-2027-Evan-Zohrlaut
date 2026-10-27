@@ -229,6 +229,15 @@ function Connect4({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
         })}
       </div>
 
+      <div className="c4__actions">
+        <button type="button" className="c4__reset" onClick={startGame}>
+          Play again
+        </button>
+        <button type="button" className="c4__change" onClick={changeSetup}>
+          Change setup
+        </button>
+      </div>
+
       <table className="c4__scores">
         <caption className="c4__scores-caption">Score sheet</caption>
         <thead>
@@ -257,15 +266,6 @@ function Connect4({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
       <button type="button" className="c4__reset-scores" onClick={resetScores}>
         Reset scores
       </button>
-
-      <div className="c4__actions">
-        <button type="button" className="c4__reset" onClick={startGame}>
-          Play again
-        </button>
-        <button type="button" className="c4__change" onClick={changeSetup}>
-          Change setup
-        </button>
-      </div>
     </section>
   )
 }

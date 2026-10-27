@@ -194,12 +194,21 @@ function TicTacToe({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
             type="button"
             className={`ttt__cell${status.line.includes(index) ? ' ttt__cell--win' : ''}`}
             onClick={() => handleCellClick(index)}
-            disabled={finished || Boolean(cell)}
+            disabled={finished || Boolean(cell) || botIsNext}
             aria-label={`Cell ${index + 1}${cell ? `, ${cell}` : ''}`}
           >
             {cell}
           </button>
         ))}
+      </div>
+
+      <div className="ttt__actions">
+        <button type="button" className="ttt__reset" onClick={startGame}>
+          Play again
+        </button>
+        <button type="button" className="ttt__change" onClick={changeSetup}>
+          Change setup
+        </button>
       </div>
 
       <table className="ttt__scores">
@@ -230,15 +239,6 @@ function TicTacToe({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
       <button type="button" className="ttt__reset-scores" onClick={resetScores}>
         Reset scores
       </button>
-
-      <div className="ttt__actions">
-        <button type="button" className="ttt__reset" onClick={startGame}>
-          Play again
-        </button>
-        <button type="button" className="ttt__change" onClick={changeSetup}>
-          Change setup
-        </button>
-      </div>
     </section>
   )
 }
