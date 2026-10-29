@@ -127,7 +127,7 @@ function Connect4({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
           </button>
         </div>
 
-        <h2 className="c4__setup-title">Choose your game</h2>
+        <h2 className="c4__setup-title">Choose Your Game Mode!</h2>
 
         <div className="c4__options">
           <button

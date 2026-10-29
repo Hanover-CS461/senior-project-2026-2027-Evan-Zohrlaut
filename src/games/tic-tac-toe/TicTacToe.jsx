@@ -121,7 +121,7 @@ function TicTacToe({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
           </button>
         </div>
 
-        <h2 className="ttt__setup-title">Choose your game</h2>
+        <h2 className="ttt__setup-title">Choose Your Game Mode!</h2>
 
         <div className="ttt__options">
           <button
