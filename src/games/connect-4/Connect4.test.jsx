@@ -142,6 +142,15 @@ describe('Connect4 friend game', () => {
     redWins()
     expect(screen.getByText('Red wins')).toBeInTheDocument()
   })
+
+  it('highlights the result banner once the game is over', () => {
+    render(<Connect4 />)
+    startGame()
+    expect(screen.getByRole('status')).not.toHaveClass('c4__banner--finished')
+
+    redWins()
+    expect(screen.getByRole('status')).toHaveClass('c4__banner--finished')
+  })
 })
 
 describe('Connect4 bot game', () => {

@@ -177,9 +177,13 @@ function TicTacToe({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
         <button type="button" className="ttt__back" onClick={onBack}>
           ← Back
         </button>
-        <p className="ttt__status" role="status">
-          {statusText()}
-        </p>
+      </div>
+
+      <div
+        className={`ttt__banner${finished ? ' ttt__banner--finished' : ''}`}
+        role="status"
+      >
+        {statusText()}
       </div>
 
       <p className="ttt__mode">{MODE_LABELS[activeMode]}</p>

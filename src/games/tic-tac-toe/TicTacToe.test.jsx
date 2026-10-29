@@ -100,6 +100,15 @@ describe('TicTacToe friend game', () => {
     expect(cells()[5]).toBeEmptyDOMElement()
   })
 
+  it('highlights the result banner once the game is over', () => {
+    render(<TicTacToe />)
+    startGame()
+    expect(screen.getByRole('status')).not.toHaveClass('ttt__banner--finished')
+
+    winForX()
+    expect(screen.getByRole('status')).toHaveClass('ttt__banner--finished')
+  })
+
   it('announces a draw when the board fills up', () => {
     render(<TicTacToe />)
     startGame()

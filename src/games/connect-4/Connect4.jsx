@@ -183,9 +183,13 @@ function Connect4({ onBack, botDelay = DEFAULT_BOT_DELAY }) {
         <button type="button" className="c4__back" onClick={onBack}>
           ← Back
         </button>
-        <p className="c4__status" role="status">
-          {statusText()}
-        </p>
+      </div>
+
+      <div
+        className={`c4__banner${finished ? ' c4__banner--finished' : ''}`}
+        role="status"
+      >
+        {statusText()}
       </div>
 
       <p className="c4__mode">{MODE_LABELS[activeMode]}</p>
