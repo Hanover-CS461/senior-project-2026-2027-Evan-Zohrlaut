@@ -14,10 +14,10 @@ import {
 const CENTER_ORDER = [3, 2, 4, 1, 5, 0, 6]
 const WIN_SCORE = 1_000_000
 
-export const EXPERT_DEPTH = 8
-const PRO_DEPTH = 3
-const PRO_BLUNDER_CHANCE = 0.2
-const BEGINNER_BLUNDER_CHANCE = 0.7
+export const EXPERT_DEPTH = 6
+const PRO_DEPTH = 4
+const PRO_BLUNDER_CHANCE = 0.15
+const BEGINNER_BLUNDER_CHANCE = 0.5
 
 const WINDOW_SCORES = { 1: 1, 2: 8, 3: 50 }
 
