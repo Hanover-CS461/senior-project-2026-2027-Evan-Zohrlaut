@@ -12,28 +12,22 @@ const GAMES = [
     name: 'Tic Tac Toe',
     description: 'Play a friend or take on the bot.',
     variant: 'x',
-    status: 'playable',
+    component: TicTacToe,
   },
   {
     id: 'connect-4',
     name: 'Connect 4',
     description: 'Line up four in a row to win.',
     variant: 'connect-4',
-    status: 'playable',
+    component: Connect4,
   },
   {
     id: 'slot-3',
     name: 'Coming Soon',
     description: 'Reserved for the next game',
     variant: 'plus',
-    status: 'coming-soon',
   },
 ]
-
-const GAME_COMPONENTS = {
-  'tic-tac-toe': TicTacToe,
-  'connect-4': Connect4,
-}
 
 function parseRoute(hash) {
   return hash.replace(/^#\/?/, '')
@@ -57,10 +51,7 @@ function App() {
     saveTheme(theme)
   }, [theme])
 
-  const activeGame = GAMES.find(
-    (game) => game.id === route && game.status === 'playable',
-  )
-  const ActiveGame = activeGame ? GAME_COMPONENTS[activeGame.id] : null
+  const ActiveGame = GAMES.find((game) => game.id === route)?.component
 
   function goHome() {
     window.location.hash = '#/'
@@ -79,7 +70,11 @@ function App() {
       ) : (
         <main className="game-grid">
           {GAMES.map((game) => (
-            <GameSlot key={game.id} game={game} />
+            <GameSlot
+              key={game.id}
+              game={game}
+              playable={Boolean(game.component)}
+            />
           ))}
         </main>
       )}

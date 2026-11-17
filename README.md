@@ -50,9 +50,9 @@ CSS variables.
 
 The app is entirely client-side. `src/App.jsx` is the launcher: it reads the
 route from `window.location.hash`, renders the matching game component, and
-otherwise renders a grid of game slots. Games are registered in a single map
-(`GAME_COMPONENTS`), so adding a game means adding a component and an entry,
-not rewiring the app.
+otherwise renders a grid of game slots. Each game is one entry in the `GAMES`
+array, which carries its own component, so adding a game means adding a single
+entry — the launcher tile and the route stay in sync by construction.
 
 ```
 src/
@@ -156,8 +156,10 @@ The `docs/` folder is a Jekyll site:
 - **`localStorage` instead of a backend.** The no-accounts, no-server promise
   is a feature, not a limitation, and per-browser stats are enough for a casual
   game hub.
-- **A component registry instead of conditionals.** `GAME_COMPONENTS` in
-  `App.jsx` keeps the launcher from growing a branch per game.
+- **One registry instead of a component map.** Each entry in the `GAMES` array
+  in `App.jsx` carries its own component. Whether a slot is playable is derived
+  from whether that component exists, so the launcher grid and the route map
+  cannot disagree.
 - **Per-mode scoreboards replaced the proposed win-streak counter.** Tracking
   wins, losses, and draws per difficulty is more informative than a streak, and
   it reuses the per-mode data the scoreboard already needed.

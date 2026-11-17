@@ -1,9 +1,7 @@
 import GameIcon from './GameIcon.jsx'
 import './GameSlot.css'
 
-function GameSlot({ game }) {
-  const playable = game.status === 'playable'
-
+function GameSlot({ game, playable }) {
   const content = (
     <>
       <GameIcon variant={game.variant} />
