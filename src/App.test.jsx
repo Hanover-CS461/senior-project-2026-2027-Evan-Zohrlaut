@@ -1,6 +1,9 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import App from './App.jsx'
+import App, { GAMES } from './App.jsx'
+
+const playableGames = GAMES.filter((game) => game.component)
+const comingSoonGames = GAMES.filter((game) => !game.component)
 
 describe('App', () => {
   it('renders the launcher heading', () => {
@@ -8,22 +11,21 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'EZ-Games' })).toBeInTheDocument()
   })
 
-  it('renders the game slots from the games list', () => {
+  it('renders one tile per game in the registry', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: 'Tic Tac Toe' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Connect 4' })).toBeInTheDocument()
-    expect(screen.getAllByText('Coming Soon')).toHaveLength(1)
+    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(GAMES.length)
   })
 
-  it('links playable games to their hash route', () => {
+  it('marks every component-less game as coming soon', () => {
     render(<App />)
-    expect(screen.getByRole('link', { name: /tic tac toe/i })).toHaveAttribute(
-      'href',
-      '#/tic-tac-toe',
-    )
-    expect(screen.getByRole('link', { name: /connect 4/i })).toHaveAttribute(
-      'href',
-      '#/connect-4',
-    )
+    expect(screen.queryAllByText('Coming Soon')).toHaveLength(comingSoonGames.length)
+  })
+
+  it('links every playable game to its hash route', () => {
+    render(<App />)
+    for (const game of playableGames) {
+      const link = screen.getByRole('link', { name: new RegExp(game.name, 'i') })
+      expect(link).toHaveAttribute('href', `#/${game.id}`)
+    }
   })
 })

@@ -6,7 +6,7 @@ import TicTacToe from './games/tic-tac-toe/TicTacToe.jsx'
 import Connect4 from './games/connect-4/Connect4.jsx'
 import { applyTheme, loadTheme, saveTheme } from './themes.js'
 
-const GAMES = [
+export const GAMES = [
   {
     id: 'tic-tac-toe',
     name: 'Tic Tac Toe',
@@ -28,10 +28,10 @@ const GAMES = [
     variant: 'plus',
   },
   {
-  id: 'slot-4',
-  name: 'Coming Soon',
-  description: 'Reserved for the next game',
-  variant: 'plus',
+    id: 'slot-4',
+    name: 'Coming Soon',
+    description: 'Reserved for the next game',
+    variant: 'plus',
   },
 ]
 
