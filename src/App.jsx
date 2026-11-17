@@ -27,6 +27,12 @@ const GAMES = [
     description: 'Reserved for the next game',
     variant: 'plus',
   },
+  {
+  id: 'slot-4',
+  name: 'Coming Soon',
+  description: 'Reserved for the next game',
+  variant: 'plus',
+  },
 ]
 
 function parseRoute(hash) {
